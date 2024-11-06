@@ -11,6 +11,7 @@ import com.example.kotlintasks.duration.DurationCashImpl
 import com.example.kotlintasks.duration.DurationDelegate
 import com.example.kotlintasks.extension_for_list.getInt
 import com.example.kotlintasks.extension_for_list.listAny
+import com.example.kotlintasks.rxJava.RxJavaFragment
 import com.example.kotlintasks.rxJava.network_request.presentation.CatFactFragment
 import com.example.kotlintasks.shaker_sort.exampleList
 import com.example.kotlintasks.shaker_sort.shakerSort
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     private fun startFragment(){
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, CatFactFragment.newInstance(),"CatFactFragment")
+            .add(R.id.rxjava_fragment_container, RxJavaFragment.newInstance(), "RxJavaFragment")
             .commit()
     }
 }
