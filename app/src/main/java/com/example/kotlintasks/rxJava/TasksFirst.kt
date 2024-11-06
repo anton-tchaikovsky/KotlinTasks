@@ -35,6 +35,7 @@ private fun subject() {
 }
 
 private fun timer() {
+    // кастомный timer для понимания, в каком потоке работает emitter
     Observable.create { emitter ->
         println("emmit from timer ${Thread.currentThread().name}")
         Thread.sleep(10)

@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
@@ -44,4 +43,8 @@ dependencies {
     androidTestImplementation libs.androidx.espresso.core
     implementation libs.rxandroid
     implementation libs.rxjava
+    implementation libs.retrofit
+    implementation libs.converter.gson
+    implementation libs.rxjava3.retrofit.adapter
+
 }
