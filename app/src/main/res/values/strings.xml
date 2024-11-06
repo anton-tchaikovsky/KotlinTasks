@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KotlinTasks</string>
+    <string name="get_int">GetInt!</string>
+    <string name="shaker_sort">ShakerSort</string>
 </resources>
