@@ -11,6 +11,8 @@ import com.example.kotlintasks.duration.DurationCashImpl
 import com.example.kotlintasks.duration.DurationDelegate
 import com.example.kotlintasks.extension_for_list.getInt
 import com.example.kotlintasks.extension_for_list.listAny
+import com.example.kotlintasks.rxJava.RxJavaFragment
+import com.example.kotlintasks.rxJava.network_request.presentation.CatFactFragment
 import com.example.kotlintasks.shaker_sort.exampleList
 import com.example.kotlintasks.shaker_sort.shakerSort
 import kotlinx.coroutines.CoroutineScope
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Default).launch { startTimeCounter(TIMES_PERIOD) }
         findViewById<Button>(R.id.int_button).setOnClickListener {  printLogInt(listAny) }
         findViewById<Button>(R.id.sort_button).setOnClickListener {  printLogSortList(exampleList) }
+        if(savedInstanceState==null)
+            startFragment()
     }
 
     private suspend fun startTimeCounter(timePeriodInMilliseconds: Long) {
@@ -60,5 +64,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun printLogSortList(list: List<Int?>?){
         Log.i ("Shaker sort", "$list -> ${list.shakerSort()}")
+    }
+
+    private fun startFragment(){
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, CatFactFragment.newInstance(),"CatFactFragment")
+            .add(R.id.rxjava_fragment_container, RxJavaFragment.newInstance(), "RxJavaFragment")
+            .commit()
     }
 }
