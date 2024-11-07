@@ -1,9 +1,13 @@
 package com.example.kotlintasks.rxJava
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -16,6 +20,8 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.subjects.PublishSubject
+import java.util.concurrent.TimeUnit
 
 class RxJavaFragment : Fragment() {
 
@@ -59,6 +65,27 @@ class RxJavaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initTimerView()
         initElementsRecycleView()
+        initEditText()
+    }
+
+    private fun initEditText() {
+        val inputTextObservable = PublishSubject.create<String>()
+        inputTextObservable
+            .debounce(3, TimeUnit.SECONDS)
+            .subscribe { Log.i("@@@", it) }.also {
+            compositeDisposable.add(it)
+        }
+        view?.findViewById<EditText>(R.id.edit_text)?.addTextChangedListener(object : TextWatcher{
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                inputTextObservable.onNext(p0.toString())
+            }
+
+            override fun afterTextChanged(p0: Editable?) { }
+
+        })
     }
 
     private fun initElementsRecycleView() {

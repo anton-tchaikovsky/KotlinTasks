@@ -20,4 +20,16 @@
        android:layout_height="wrap_content"
        app:layout_constraintTop_toBottomOf="@id/timer_text_view"
        />
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints = "username"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:layout_marginTop="24dp"
+        android:hint="@string/text_input"
+        app:layout_constraintTop_toBottomOf="@id/elements_recycler_view"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
