@@ -50,5 +50,6 @@ dependencies {
     implementation libs.retrofit
     implementation libs.converter.gson
     implementation libs.rxjava3.retrofit.adapter
+    implementation libs.androidx.work.runtime.ktx
 
 }
