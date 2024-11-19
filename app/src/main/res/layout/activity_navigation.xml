@@ -24,10 +24,24 @@
         app:colorFirstFraction="@android:color/holo_green_dark"
         app:colorSecondFraction="@android:color/darker_gray"
         app:isRandomColor="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/custom_view_from_scratch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragment_container"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.example.kotlintasks.custom_view.CustomViewFromScratch
+        android:id="@+id/custom_view_from_scratch"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="48dp"
+        app:colorFirstFraction="@android:color/holo_green_dark"
+        app:colorSecondFraction="@android:color/darker_gray"
+        app:isRandomColor="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_view"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

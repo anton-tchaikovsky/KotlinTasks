@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorFirstFraction" format="color" />
+    <attr name="colorSecondFraction" format="color" />
+    <attr name="isRandomColor" format="boolean" />
+</resources>
