@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="colorFirstFraction" format="color" />
+        <attr name="colorSecondFraction" format="color" />
+        <attr name="isRandomColor" format="boolean" />
+    </declare-styleable>
+</resources>

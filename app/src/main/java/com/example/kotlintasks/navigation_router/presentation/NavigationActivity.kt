@@ -1,6 +1,7 @@
 package com.example.kotlintasks.navigation_router.presentation
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -60,6 +61,7 @@ class NavigationActivity : AppCompatActivity(), NavigationRequestListener {
             .setConstraints(constraints)
             .build()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
